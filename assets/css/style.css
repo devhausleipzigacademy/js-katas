@@ -1,0 +1,184 @@
+:root {
+  --bg-color: #252526;
+  --bg-color-secondary: #37373d;
+  --bg-color-ternary: #49494b;
+  --bg-color-code: #1e1e1e;
+  --text-color: #c6c6c6;
+  --color-success: #70ca8f;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color-code);
+  color: var(--text-color);
+  font-family: "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+h1 {
+  font-size: 1rem;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+header {
+  background-color: var(--bg-color-ternary);
+  display: flex;
+  padding: 0.4rem 1rem;
+  align-items: center;
+}
+
+pre {
+  white-space: pre-wrap;
+  font-family: "Source Code Pro", monospace;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.header-title {
+  display: flex;
+}
+
+.level-selector {
+  display: flex;
+}
+
+header > * + * {
+  margin-left: 2rem;
+}
+
+.header-title {
+  margin-left: 1rem;
+}
+
+.level-selector > * + * {
+  margin-left: 0.5rem;
+}
+
+a:hover {
+  color: white;
+}
+
+.level-completed {
+  display: none;
+  flex-grow: 1;
+  justify-content: right;
+}
+
+.completed .level-completed {
+  display: block;
+  color: var(--color-success);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.code-file a {
+  background-color: #2d2d2d;
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  width: 24ch;
+}
+
+.code-file {
+  background-color: var(--bg-color);
+}
+
+.code-file pre {
+  background-color: var(--bg-color-code);
+  padding: 1rem 1rem;
+}
+
+section p,
+.instructions pre {
+  max-width: 100ch;
+}
+
+.instructions .section-content {
+  padding-bottom: 1.5rem;
+}
+
+.completed header {
+  background-color: green;
+}
+
+.completed .level-completed i {
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+
+section p {
+  margin-bottom: 0.3em;
+}
+
+.code-file a::before {
+  content: "JS";
+  font-weight: bold;
+  font-size: 0.8rem;
+  padding: 0rem 0.5rem 0.3rem 0;
+  color: orange;
+}
+
+.section-header {
+  background-color: var(--bg-color-secondary);
+  padding: 0.3rem 1rem;
+}
+
+.section-content {
+  background-color: var(--bg-color);
+  padding: 0.3rem 1rem;
+}
+
+.test-console {
+  background-color: var(--bg-color-code);
+}
+
+#console-output {
+  min-height: 2em;
+}
+
+#console-output .header {
+  font-weight: bold;
+}
+
+#console-output .error {
+  color: red;
+  font-weight: bold;
+}
+
+#console-output .success {
+  color: var(--color-success);
+  font-weight: bold;
+}
+
+#console-output .message {
+  color: orange;
+}
+
+.lessons h2 i {
+  margin-left: 1rem;
+}
+
+.lessons h2 {
+  font-size: 0.9rem;
+}
