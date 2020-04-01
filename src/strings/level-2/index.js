@@ -1,15 +1,19 @@
 test(
-  "> fortuneTeller('Duck', 'blue', 'Cheetahs')",
-  () => fortuneTeller("Duck", "blue", "Cheetahs"),
-  assertEqual(
-    "Those born under the planetary sign of the Duck possess blue personalities and are forever searching for new Cheetahs to conquer."
-  )
+  "> comp('Apple', 'Pears')",
+  () => comp("Apple", "Pears"),
+  assertEqual(true)
 );
 
+test("> comp('ABCD', 'ABC')", () => comp("ABCD", "ABC"), assertEqual(false));
+
+test("> comp('', '')", () => comp("", ""), assertEqual(true));
+
+test("> comp('123', '1111')", () => comp("123", "1111"), assertEqual(false));
+
 const meta = {
-  title: "String Methods",
+  title: "Character Comparison",
   levelPath: "String - Level 2",
   previousLink: "../level-1/index.html",
   nextLink: "../level-3/index.html",
-  codeFiles: ["challenges/strings/level-1/fortune-teller.js"]
+  codeFiles: ["challenges/strings/level-2/character-comparison.js"]
 };

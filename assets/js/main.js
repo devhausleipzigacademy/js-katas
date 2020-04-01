@@ -49,7 +49,7 @@ function runTests() {
     const { message, success, error, explanation } = test.validate(testValue);
 
     if (message) {
-      console.message(message);
+      testConsole.message(message);
     }
     if (error) {
       testConsole.error(error);

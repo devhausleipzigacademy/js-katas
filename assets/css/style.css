@@ -182,3 +182,7 @@ section p {
 .lessons h2 {
   font-size: 0.9rem;
 }
+
+li {
+  list-style-type: none;
+}
