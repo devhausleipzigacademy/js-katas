@@ -34,8 +34,5 @@ test("> Checking if there's some amount of randomness", generator, values => {
 
 const meta = {
   title: "Random Bit",
-  levelPath: "Numbers - Level 3",
-  previousLink: "../level-2/index.html",
-  nextLink: "../../../index.html",
-  codeFiles: ["challenges/numbers/level-3/random-bit.js"]
+  codeFiles: ["random-bit.js"]
 };

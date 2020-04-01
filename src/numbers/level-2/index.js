@@ -4,8 +4,5 @@ test("> nextItemIndex(1, 2)", () => nextItemIndex(1, 2), assertEqual(0));
 
 const meta = {
   title: "Modulo",
-  levelPath: "Numbers - Level 2",
-  previousLink: "../level-1/index.html",
-  nextLink: "../level-3/index.html",
-  codeFiles: ["challenges/numbers/level-2/modulo.js"]
+  codeFiles: ["modulo.js"]
 };

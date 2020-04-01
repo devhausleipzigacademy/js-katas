@@ -4,7 +4,7 @@ Create a function that returns the absolute value of a number.
 
 ```js
 abs(3); // --> 3
-abs(-3); // --> -3
+abs(-3); // --> 3
 abs(0); // --> 0
 ```
 

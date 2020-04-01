@@ -8,8 +8,5 @@ test(
 
 const meta = {
   title: "Fortune Teller",
-  levelPath: "String - Level 1",
-  previousLink: "../../../index.html",
-  nextLink: "../level-2/index.html",
-  codeFiles: ["challenges/strings/level-1/fortune-teller.js"]
+  codeFiles: ["fortune-teller.js"]
 };
