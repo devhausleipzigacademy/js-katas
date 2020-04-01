@@ -5,6 +5,7 @@
   --bg-color-code: #1e1e1e;
   --text-color: #c6c6c6;
   --color-success: #70ca8f;
+  --primary-color: #8dd0ff;
 }
 
 body {
@@ -36,9 +37,25 @@ h1 {
   font-size: 1rem;
 }
 
+.instructions a {
+  color: var(--primary-color);
+}
+
+.instructions a:hover {
+  text-decoration: underline;
+}
+
 a {
-  color: var(--text-color);
   text-decoration: none;
+  color: var(--text-color);
+}
+
+a:hover {
+  color: white;
+}
+
+.code-file a:hover {
+  background-color: var(--bg-color-ternary);
 }
 
 header {
@@ -46,6 +63,10 @@ header {
   display: flex;
   padding: 0.4rem 1rem;
   align-items: center;
+}
+
+header h1 {
+  min-width: 230px;
 }
 
 pre {
@@ -73,10 +94,6 @@ header > * + * {
 
 .level-selector > * + * {
   margin-left: 0.5rem;
-}
-
-a:hover {
-  color: white;
 }
 
 .level-completed {
@@ -151,6 +168,7 @@ section p {
 
 .test-console {
   background-color: var(--bg-color-code);
+  padding-bottom: 2em;
 }
 
 #console-output {
@@ -185,4 +203,15 @@ section p {
 
 li {
   list-style-type: none;
+}
+
+.instructions p,
+.instructions h3,
+.instructions pre,
+.instructions ul {
+  margin-bottom: 0.83em;
+}
+
+.instructions ul {
+  margin-left: 0.5em;
 }
