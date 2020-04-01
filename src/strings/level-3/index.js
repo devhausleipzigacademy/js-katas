@@ -1,16 +1,12 @@
-const generator = () => {
-  const result = [];
-  for (let i = 0; i < 30; ++i) {
-    result.push(randomBit());
-  }
-  return result;
-}
+test("> newLine", () => newLine, assertEqual("\n"));
 
-test("> Checking if function only returns bits: 0 or 1", generator, (values) => {
-  if (values.every(n => n === 1 || n === 0)) {
-    return {success: "randomBit only returns 0 or 1"}
-  }
-};
+test(
+  "> windowsFilePath",
+  () => windowsFilePath,
+  assertEqual("C:\\Users\\Rick\\Desktop")
+);
+
+test("> emoji", () => emoji, assertEqual("\u{1F600}"));
 
 const meta = {
   title: "String Escape",

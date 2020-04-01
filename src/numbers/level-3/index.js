@@ -8,7 +8,7 @@ const generator = () => {
 
 test("> Checking if function only returns bits: 0 or 1", generator, values => {
   if (values.every(n => n === 1 || n === 0)) {
-    return { success: "randomBit only returns 0 or 1" };
+    return { success: values };
   } else {
     return {
       error: "Found values that are neither 0 nor 1",
