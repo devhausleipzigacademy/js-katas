@@ -1,4 +1,7 @@
 var abs = function(x) {
-  // return the absolute value of x
-  return 0;
+  if (x >= 0) {
+    return x;
+  } else {
+    return -x;
+  }
 };

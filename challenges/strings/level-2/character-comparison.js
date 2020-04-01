@@ -1,3 +1,3 @@
 var comp = function(a, b) {
-  return false;
+  return a.length == b.length;
 };

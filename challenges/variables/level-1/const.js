@@ -1,7 +1,7 @@
-var bindings = function() {
-  var a = 0;
-  var b = 0;
-  var c = 0;
+const bindings = function() {
+  let a = 0;
+  const b = 0;
+  let c = 0;
 
   a = 1;
   a = a + b;
