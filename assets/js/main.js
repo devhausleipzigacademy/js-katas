@@ -26,6 +26,27 @@ async function loadScript(path) {
   });
 }
 
+var executingScript = 0;
+
+async function runScript(source) {
+  return new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.textContent = source + "\nexecutingScript = 0;";
+    const listener = e => {
+      e.preventDefault();
+      reject(e.message);
+    };
+    window.addEventListener("error", listener);
+    executingScript = 1;
+    document.body.appendChild(script);
+    if (executingScript == 0) {
+      window.removeEventListener("error", listener);
+      resolve();
+    }
+  });
+}
+
 async function readMarkdown(path) {
   const md = await fetch(path).then(res => res.text());
   return marked(md);
@@ -97,7 +118,7 @@ function runTests(source) {
 async function executeFile(fileName, script) {
   try {
     testConsole.header(`>>> Running ${fileName}`);
-    window.eval(script);
+    await runScript(script);
 
     runTests(script);
   } catch (error) {
