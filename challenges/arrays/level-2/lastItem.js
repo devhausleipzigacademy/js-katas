@@ -1,0 +1,3 @@
+function lastItem(array) {
+  return /*...*/;
+}

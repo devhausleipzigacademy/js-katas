@@ -4,12 +4,12 @@ function loadURLParams() {
   const urlParams = new URLSearchParams(window.location.search);
   return {
     lesson: urlParams.get("lesson"),
-    level: urlParams.get("level")
+    level: urlParams.get("level"),
   };
 }
 
 async function readConfig() {
-  return await fetch("../../config.json").then(res => res.json());
+  return await fetch("../../config.json").then((res) => res.json());
 }
 
 async function loadScript(path) {
@@ -33,7 +33,7 @@ async function runScript(source) {
     const script = document.createElement("script");
     script.type = "text/javascript";
     script.textContent = source + "\nexecutingScript = 0;";
-    const listener = e => {
+    const listener = (e) => {
       e.preventDefault();
       reject(e.message);
     };
@@ -48,7 +48,7 @@ async function runScript(source) {
 }
 
 async function readMarkdown(path) {
-  const md = await fetch(path).then(res => res.text());
+  const md = await fetch(path).then((res) => res.text());
   return marked(md);
 }
 
@@ -88,10 +88,17 @@ function runTests(source) {
   testConsole.header(">>> Running Tests");
   tests.forEach((test, index) => {
     testConsole.log(test.description);
-    const testValue = test.execute();
+    let testValue = null;
+    let exception = null;
+    try {
+      testValue = test.execute();
+    } catch (e) {
+      exception = e;
+    }
     const { message, success, error, explanation } = test.validate(
       testValue,
-      source
+      source,
+      exception
     );
 
     if (message) {
@@ -148,7 +155,7 @@ async function main() {
     `../../src/${lesson}/level-${level}/index.md`
   );
 
-  document.querySelectorAll("#markdown-output pre code").forEach(block => {
+  document.querySelectorAll("#markdown-output pre code").forEach((block) => {
     hljs.highlightBlock(block);
   });
 
@@ -173,7 +180,7 @@ async function main() {
 
   const codeSection = document.querySelector(".code");
 
-  meta.codeFiles.forEach(async function(fileName) {
+  meta.codeFiles.forEach(async function (fileName) {
     const repositoryPath = `challenges/${lesson}/level-${level}/${fileName}`;
     const fileUrl = "../../" + repositoryPath;
     const vscodeURL = `vscode://file/${root}/${repositoryPath}`;
@@ -182,7 +189,7 @@ async function main() {
     link.setAttribute("href", vscodeURL);
     link.textContent = fileName;
 
-    const fileContent = await fetch(fileUrl).then(res => res.text());
+    const fileContent = await fetch(fileUrl).then((res) => res.text());
 
     const content = document.createElement("pre");
     content.textContent = fileContent;

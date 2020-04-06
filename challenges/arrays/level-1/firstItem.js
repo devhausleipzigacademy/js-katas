@@ -1,0 +1,3 @@
+function firstItem(array) {
+  return /*...*/;
+}
