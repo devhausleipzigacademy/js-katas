@@ -14,6 +14,6 @@ function logArrayForOfLoop(array) {
   // and here
 }
 
-function logArrayForEachLoop(array) {
+function logArrayForEach(array) {
   // and here.
 }
