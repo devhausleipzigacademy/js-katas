@@ -19,7 +19,7 @@ for (let i = 0; condition; ++i) {
 ### for of
 
 ```js
-for (element of array) {
+for (const element of array) {
   // Loop Body
 }
 ```
