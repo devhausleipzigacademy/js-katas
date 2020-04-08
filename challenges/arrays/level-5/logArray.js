@@ -7,13 +7,22 @@ function logArrayWhileLoop(array) {
 }
 
 function logArrayForLoop(array) {
-  // Your code goes here
+  for (let i = 0; i < array.length; ++i) {
+    console.log(array[i]);
+  }
 }
 
 function logArrayForOfLoop(array) {
-  // and here
+  for (const element of array) {
+    console.log(element);
+  }
 }
 
 function logArrayForEach(array) {
-  // and here.
+  array.forEach((element) => {
+    console.log(element);
+  });
+
+  // Or if you are feeling cleaver today
+  // array.forEach(console.log);
 }

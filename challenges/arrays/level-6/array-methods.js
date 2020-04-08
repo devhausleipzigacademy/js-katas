@@ -1,17 +1,17 @@
 function repeatArray(array) {
-  // Don't forget to return the repeatedArray
+  return array.concat(array);
 }
 
 function withoutFirstAndLast(array) {
-  // Don't forget to return the slice
+  return array.slice(1, array.length - 1);
 }
 
 function addElementToBeginning(array, newElement) {
-  // Your code goes here
+  array.splice(0, 0, newElement);
   return array;
 }
 
 function removeSecondItem(array) {
-  // Your code goes here
+  array.splice(1, 1);
   return array;
 }

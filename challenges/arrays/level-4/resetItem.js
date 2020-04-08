@@ -1,4 +1,4 @@
 function resetItem(array, index, newValue) {
-  // Your code goes here
+  array[index] = newValue;
   return array;
 }

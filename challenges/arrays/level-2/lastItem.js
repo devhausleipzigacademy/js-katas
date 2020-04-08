@@ -1,3 +1,3 @@
 function lastItem(array) {
-  return /*...*/;
+  return array[array.length - 1];
 }

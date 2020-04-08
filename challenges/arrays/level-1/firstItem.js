@@ -1,3 +1,3 @@
 function firstItem(array) {
-  return /*...*/;
+  return array[0];
 }

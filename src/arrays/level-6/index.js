@@ -6,7 +6,7 @@ const meta = {
 test(
   `repeatArray(["A", "B", "C"])`,
   () => repeatArray(["A", "B", "C"]),
-  assertEqual(["A", "B", "C", "D", "E", "F"])
+  assertEqual(["A", "B", "C", "A", "B", "C"])
 );
 
 test(

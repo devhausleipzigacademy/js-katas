@@ -1,4 +1,4 @@
-This challenge is about getting used to researching and then using array methods.
+This challenge is about getting used to first researching and then using array methods.
 
 You can find a complete reference of all array methods at
 [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
@@ -10,11 +10,11 @@ We'll be using the following methods, so make sure to look them up to understand
 - splice
 
 There are four different functions to implement. The examples are the quickest way to show how they should behave.
-Since this is an exercise you can expect that the functions will always be called with arrays that containing enough elements so the operation can be performed.
+Since this is an exercise you can expect that the functions will always be called with arrays containing enough elements so the operation can be performed.
 It's ok to mutate the incoming array, but don't forget to also return the updated array.
 
 ```js
-repeatArray(["A", "B", "C"]) -> ["A", "B", "C", "D", "E", "F"]
+repeatArray(["A", "B", "C"]) -> ["A", "B", "C", "A", "B", "C"]
 
 withoutFirstAndLast(["A", "B", "C", "D", "E"]) -> ["B", "C", "D"]
 
