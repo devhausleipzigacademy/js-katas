@@ -1,7 +1,7 @@
 function logArrayWhileLoop(array) {
   let i = 0;
   while (i < array.length) {
-    console.log(array[element]);
+    console.log(array[i]);
     ++i;
   }
 }
