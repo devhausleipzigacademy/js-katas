@@ -3,21 +3,25 @@ const meta = {
   codeFiles: ["arrayLengthEven.js"]
 };
 
-  function returnFeedback(testValue, source, answer) {
+  function returnFeedback(testValue, source, answer, explanation) {
   if (typeof testValue !== 'boolean') {
     return {
-      error: 'Output is not a Boolean value!'
+      error: 'Output is not a Boolean value'
     };
   }
-  if ( /)\s?\{*\.length*\}/.test(source)) {
+  if ( /\)\s?\{.*\.length.*\}/.test(source)) {
     return {
       error: "No 'length' property look-up detected"
     };
   }
   if (testValue !== answer) {
-    return {
-      error: 'Incorrect output!'
+    const output = {
+      error: 'Incorrect output'
+    };
+    if (explanation) {
+      output["explanation"] = explanation
     }
+    return { ...output};
   }
   else {
     return {
@@ -43,16 +47,16 @@ const meta = {
   );
 
   test(
-  `arrayLengthEven([1,2,3,4,5,6,7,8]);`,
-  () => arrayLengthEven([1,2,3,4,5,6,7,8]),
-  (testValue, source) => {
-    return returnFeedback(!testValue, source, True);
-  }
-  );
-
-  test(
   `arrayLengthEven(['too','swole','to','control']);`,
   () => arrayLengthEven(['too','swole','to','control']),
   (testValue, source) => {
     return returnFeedback(testValue, source, True);
   }
+
+  test(
+  `arrayLengthEven([]);`,
+  () => arrayLengthEven([]),
+  (testValue, source) => {
+    return returnFeedback(testValue, source, True, "Zero is an even number");
+  }
+  );
