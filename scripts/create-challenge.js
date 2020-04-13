@@ -3,11 +3,16 @@ const path = require("path");
 
 const lesson = process.argv[2];
 const level = process.argv[3];
-const filename = process.argv[4];
+let filename = process.argv[4];
 
 if (!lesson || !level || !filename) {
   console.log("Usage: <lesson> <level> <filename>");
   exit(1);
+}
+
+if (!/.*\.\w{2,4}$/u.test(filename)) {
+  console.log("No valid file extension detected in filename; '.js' appended to given filename.")
+  filename = filename.concat('.js');
 }
 
 const repo = path.resolve(__dirname, "..");
