@@ -34,7 +34,7 @@ const meta = {
   `arrayLengthEven([1,2,3,4,5]);`,
   () => arrayLengthEven([1,2,3,4,5]),
   (testValue, source) => {
-    return returnFeedback(testValue, source, False);
+    return returnFeedback(testValue, source, false);
   }
   );
 
@@ -42,7 +42,7 @@ const meta = {
   `arrayLengthEven(['little','piggy','went','to','town']);`,
   () => arrayLengthEven(['little','piggy','went','to','town']),
   (testValue, source) => {
-    return returnFeedback(testValue, source, False);
+    return returnFeedback(testValue, source, false);
   }
   );
 
@@ -50,13 +50,13 @@ const meta = {
   `arrayLengthEven(['too','swole','to','control']);`,
   () => arrayLengthEven(['too','swole','to','control']),
   (testValue, source) => {
-    return returnFeedback(testValue, source, True);
+    return returnFeedback(testValue, source, true);
   }
 
   test(
   `arrayLengthEven([]);`,
   () => arrayLengthEven([]),
   (testValue, source) => {
-    return returnFeedback(testValue, source, True, "Zero is an even number");
+    return returnFeedback(testValue, source, true, "Zero is an even number");
   }
   );

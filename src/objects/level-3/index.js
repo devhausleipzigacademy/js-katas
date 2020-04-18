@@ -9,7 +9,7 @@ function returnFeedback(testValue, source, answer) {
       error: 'Output is not a Boolean value!'
     };
   }
-  if ( /)\s?\{*\.hasOwnProperty*\}/.test(source)) {
+  if ( /)\s?\{*\.hasOwnProperty\(*\}/.test(source)) {
     return {
       error: "Don't use the 'hasOwnProperty' method!"
     };
@@ -33,7 +33,7 @@ test(
   `objectHasProperty(anObj, 'realProperty');`,
   () => objectHasProperty(anObj, 'realProperty'),
   (testValue, source) => {
-    return returnFeedback(testValue, source, True);
+    return returnFeedback(testValue, source, true);
   }
 );
 
@@ -41,6 +41,6 @@ test(
   `objectHasProperty(anObj, 'fakeProperty');`,
   () => objectHasProperty(anObj, 'fakeProperty'),
   (testValue, source) => {
-    return returnFeedback(testValue, source, False);
+    return returnFeedback(testValue, source, false);
   }
 );
