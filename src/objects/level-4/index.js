@@ -9,12 +9,12 @@ function returnFeedback(testValue, source, answer) {
       error: 'Output is not a Boolean value!'
     };
   }
-  if ( !/)\s?\{*objectHasProperty\(*\}/.test(source)) {
+  if ( !/)\s?\{.*objectHasProperty\(.*\}/.test(source)) {
     return {
       error: "No call to 'objectHasProperty' detected"
     };
   }
-  if ( !/)\s?\{*typeof*\}/.test(source)) {
+  if ( !/)\s?\{.*typeof.*\}/.test(source)) {
     return {
       error: "No instance of 'typeof' operator detected"
     };

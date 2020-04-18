@@ -1,6 +1,6 @@
 const meta = {
-  title: "Check if Object has property",
-  codeFiles: ["objHasProp.js"]
+  title: "Null is type 'Object'",
+  codeFiles: ["nullIsTypeObject.js"]
 };
 
 function returnFeedback(testValue, source, answer) {
@@ -9,9 +9,14 @@ function returnFeedback(testValue, source, answer) {
       error: 'Output is not a Boolean value!'
     };
   }
-  if ( /)\s?\{.*\.hasOwnProperty\(.*\}/.test(source)) {
+  if ( !/)\s?\{.*typeof.*\}/.test(source)) {
     return {
-      error: "Don't use the 'hasOwnProperty' method!"
+      error: "No instance of 'typeof' operator detected"
+    };
+  }
+  if ( !/)\s?\{.*if\s\(.*null.*\).*\}/.test(source)) {
+    return {
+      error: "No check for value equal to 'null' detected"
     };
   }
   if (testValue !== answer) {
@@ -27,19 +32,20 @@ function returnFeedback(testValue, source, answer) {
   };
 };
 
-const anObj.realProperty = 'I exist.';
+const anObj = { key: 'value' };
+const notAnObj = null;
 
 test(
-  `objectHasProperty(anObj, 'realProperty');`,
-  () => objectHasProperty(anObj, 'realProperty'),
+  `checkIfObject(anObj);`,
+  () => checkIfObject(anObj),
   (testValue, source) => {
     return returnFeedback(testValue, source, true);
   }
 );
 
 test(
-  `objectHasProperty(anObj, 'fakeProperty');`,
-  () => objectHasProperty(anObj, 'fakeProperty'),
+  `checkIfObject(notAnObj);`,
+  () => checkIfObject(notAnObj),
   (testValue, source) => {
     return returnFeedback(testValue, source, false);
   }
