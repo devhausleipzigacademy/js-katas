@@ -9,7 +9,7 @@ function returnFeedback(testValue, source, answer, explanation) {
       error: 'Output is not an array'
     };
   }
-  if ( /\)\s?\{.*\.concat\(.*\}/.test(source)) {
+  if ( !/\)\s?\{.*\.concat\(.*\}/.test(source)) {
     return {
       error: "No 'concat' method call detected"
     };

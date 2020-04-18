@@ -9,7 +9,7 @@ const meta = {
       error: 'Output is not a Boolean value'
     };
   }
-  if ( /\)\s?\{.*\.length.*\}/.test(source)) {
+  if ( !/\)\s?\{.*\.length.*\}/.test(source)) {
     return {
       error: "No 'length' property look-up detected"
     };

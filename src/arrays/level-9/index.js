@@ -9,7 +9,7 @@ function returnFeedback(testValue, source, answer, explanation) {
       error: 'Output is not an array'
     };
   }
-  if ( /\)\s?\{.*\.push\(.*\}/.test(source)) {
+  if ( !/\)\s?\{.*\.push\(.*\}/.test(source)) {
     return {
       error: "No 'push' method call detected"
     };
