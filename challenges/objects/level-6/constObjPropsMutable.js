@@ -7,7 +7,7 @@ function buggyWebsite(safeImmutableObject, unsafeMutableCopy) {
   let userInputUserName, userInputPassword;
 
   userInputUserName = "l33tHaX0R@420.jm";
-  userInputPassword = "*********"
+  userInputPassword = "*********";
 
   // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
   // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
