@@ -1,10 +1,10 @@
 Functions can be made to accept an unknown number of arguments (their arity is variadic). In JavaScript, this is accomplished using 'rest parameter syntax'.
 
-The last parameter in a function declaration can be prefixed with an ellipsis (three dots '...'). The name declared for that last rest parameter will be bound to all additional arguments passed when the function is called; those additional arguments are exposed in the form of an array.
+The last parameter in a function declaration can be prefixed with an ellipsis (three dots '...'). The name declared for that last "rest" parameter will be bound to all additional arguments passed when the function is called; those additional arguments are exposed in the form of an array.
 
 ```js
 function variadicFunc(firstArg, secondArg, ...args) {
-  so(firstArg, secondArg)
+  doSomething(firstArg, secondArg);
   return args;
 };
 
